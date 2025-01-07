@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:travel_lens/resources/app_colors.dart';
@@ -15,7 +14,13 @@ class TabbarWidget extends StatelessWidget {
       padding: EdgeInsets.zero,
       isScrollable: true,
       indicatorPadding: EdgeInsets.zero,
-      labelPadding: EdgeInsets.symmetric(horizontal: 20.w),
+      labelPadding: EdgeInsets.symmetric(horizontal: 23.w),
+      labelColor: AppColors.kBlackColor,
+      unselectedLabelColor: AppColors.kDarkGreyColor,
+      labelStyle: AppTypography.kBold16,
+      unselectedLabelStyle: AppTypography.kMedium16,
+      indicatorColor: AppColors.kBlackColor,
+      indicatorSize: TabBarIndicatorSize.label,
       tabs: const [
         Tab(text: "Jungle"),
         Tab(text: "Beach"),
@@ -23,12 +28,6 @@ class TabbarWidget extends StatelessWidget {
         Tab(text: "Water"),
         Tab(text: "River")
       ],
-      labelColor: AppColors.kBlackColor,
-      unselectedLabelColor: AppColors.kDarkGreyColor,
-      labelStyle: AppTypography.kBold16,
-      unselectedLabelStyle: AppTypography.kMedium16,
-      indicatorColor: AppColors.kBlackColor,
-      indicatorSize: TabBarIndicatorSize.label,
     );
   }
 }

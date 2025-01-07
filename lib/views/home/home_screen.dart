@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:travel_lens/models/tile_model.dart';
 import 'package:travel_lens/resources/app_colors.dart';
 import 'package:travel_lens/resources/app_typography.dart';
+import 'package:travel_lens/views/home/widgets/tabbar_widget.dart';
 import 'package:travel_lens/views/home/widgets/tiles.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -33,27 +34,7 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             children: [
               SizedBox(height: 10.h),
-              TabBar(
-                tabAlignment: TabAlignment.start,
-                dividerColor: AppColors.kTransparentColor,
-                padding: EdgeInsets.zero,
-                isScrollable: true,
-                indicatorPadding: EdgeInsets.zero,
-                labelPadding: EdgeInsets.symmetric(horizontal: 20.w),
-                tabs: const [
-                  Tab(text: "Jungle"),
-                  Tab(text: "Beach"),
-                  Tab(text: "Mountain"),
-                  Tab(text: "Water"),
-                  Tab(text: "River")
-                ],
-                labelColor: AppColors.kBlackColor,
-                unselectedLabelColor: AppColors.kDarkGreyColor,
-                labelStyle: AppTypography.kBold16,
-                unselectedLabelStyle: AppTypography.kMedium16,
-                indicatorColor: AppColors.kBlackColor,
-                indicatorSize: TabBarIndicatorSize.label,
-              ),
+              const TabbarWidget(),
               SizedBox(height: 20.h),
               SizedBox(
                 height: 260.h,
