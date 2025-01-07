@@ -17,7 +17,7 @@ class DetailScreen extends StatefulWidget {
 }
 
 class _DetailScreenState extends State<DetailScreen> {
-  late ProductTileModel productTileModel;
+  late TileModel productTileModel;
 
   @override
   void initState() {
@@ -74,7 +74,7 @@ class _DetailScreenState extends State<DetailScreen> {
                   controller: (controller) => controller = controller,
                   delay: const Duration(milliseconds: 300),
                   child: Text(
-                    productTileModel.name,
+                    "productTileModel.name",
                     style: AppTypography.kExtraBold20
                         .copyWith(color: AppColors.kGreyColor),
                   ),
@@ -84,7 +84,7 @@ class _DetailScreenState extends State<DetailScreen> {
                   controller: (controller) => controller = controller,
                   delay: const Duration(milliseconds: 400),
                   child: Text(
-                    "By ${productTileModel.manufacturer}",
+                    "By ",
                     style: AppTypography.kMedium16
                         .copyWith(color: AppColors.kGreyColor.withOpacity(0.4)),
                   ),
@@ -95,7 +95,7 @@ class _DetailScreenState extends State<DetailScreen> {
                   delay: const Duration(milliseconds: 500),
                   child: CircleAvatar(
                     radius: 20.r,
-                    backgroundColor: productTileModel.color,
+                    // backgroundColor: productTileModel.color,
                     child: FadeInUp(
                       animate: animate,
                       controller: (controller) => controller = controller,
@@ -129,7 +129,7 @@ class _DetailScreenState extends State<DetailScreen> {
                 controller: (controller) => controller = controller,
                 delay: const Duration(milliseconds: 900),
                 child: Text(
-                  productTileModel.description,
+                  " productTileModel.description",
                   style: AppTypography.kMedium12
                       .copyWith(color: AppColors.kGreyColor.withOpacity(0.6)),
                   textAlign: TextAlign.justify,
@@ -144,7 +144,7 @@ class _DetailScreenState extends State<DetailScreen> {
         animate: animate,
         controller: (controller) => controller = controller,
         delay: const Duration(milliseconds: 600),
-        child: BottomSheetWidget(color: productTileModel.color),
+        child: const BottomSheetWidget(color: Colors.orange),
       ),
     );
   }

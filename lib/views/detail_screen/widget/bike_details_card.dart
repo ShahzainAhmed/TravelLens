@@ -6,7 +6,7 @@ import 'package:travel_lens/resources/app_colors.dart';
 import 'package:travel_lens/resources/app_typography.dart';
 
 class BikeDetailsCard extends StatelessWidget {
-  final ProductTileModel productTileModel;
+  final TileModel productTileModel;
   const BikeDetailsCard({super.key, required this.productTileModel});
 
   @override
@@ -64,7 +64,7 @@ class BikeDetailsCard extends StatelessWidget {
                       .copyWith(color: AppColors.kGreyColor),
                 ),
                 Text(
-                  productTileModel.price,
+                  "productTileModel.price",
                   style: AppTypography.kExtraBold14
                       .copyWith(color: AppColors.kBlackColor),
                 ),
@@ -89,7 +89,7 @@ class BikeDetailsCard extends StatelessWidget {
                       .copyWith(color: AppColors.kGreyColor),
                 ),
                 Text(
-                  productTileModel.engine,
+                  "productTileModel.engine",
                   style: AppTypography.kExtraBold14
                       .copyWith(color: AppColors.kBlackColor),
                 ),

@@ -3,15 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:travel_lens/models/tile_model.dart';
+import 'package:travel_lens/resources/app_assets.dart';
 import 'package:travel_lens/resources/app_colors.dart';
 import 'package:travel_lens/resources/app_typography.dart';
 
-class ProductTile extends StatelessWidget {
+class LargeTiles extends StatelessWidget {
   final VoidCallback onTap;
-  final ProductTileModel productTileModel;
-  const ProductTile({
+  final TileModel tileModel;
+  const LargeTiles({
     super.key,
-    required this.productTileModel,
+    required this.tileModel,
     required this.onTap,
   });
   @override
@@ -19,47 +20,37 @@ class ProductTile extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: const EdgeInsets.all(12),
+        padding: const EdgeInsets.all(20),
+        width: 200.w,
         decoration: BoxDecoration(
-          boxShadow: [
-            BoxShadow(
-              color: AppColors.kDarkGreyColor.withOpacity(0.3),
-              // spreadRadius: 1,
-              blurRadius: 3,
-              offset: const Offset(0, 2),
-            ),
-          ],
-          color: const Color(0xffeaeaea),
-          borderRadius: BorderRadius.circular(18.r),
+          borderRadius: BorderRadius.circular(30.r),
+          image: DecorationImage(
+            image: AssetImage(tileModel.image),
+            fit: BoxFit.cover,
+          ),
         ),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Image.asset(productTileModel.image, height: 75.h),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
-              height: 40.h,
-              width: Get.width,
               decoration: BoxDecoration(
                 color: AppColors.kWhiteColor,
                 borderRadius: BorderRadius.circular(10.r),
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    productTileModel.name,
-                    style: AppTypography.kBold10
-                        .copyWith(color: AppColors.kBlackColor),
+              height: 50.h,
+              width: Get.width,
+              child: ListTile(
+                title: Text(
+                  tileModel.title,
+                  style: AppTypography.kBold14
+                      .copyWith(color: AppColors.kBlackColor),
+                ),
+                subtitle: Text(
+                  tileModel.subtitle,
+                  style: AppTypography.kMedium12.copyWith(
+                    color: AppColors.kDarkGreyColor.withOpacity(0.6),
                   ),
-                  Text(
-                    "PKR ${productTileModel.price}",
-                    style: AppTypography.kBold10.copyWith(
-                      color: AppColors.kGreyColor.withOpacity(0.5),
-                    ),
-                  ),
-                ],
+                ),
               ),
             )
           ],

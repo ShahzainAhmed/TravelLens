@@ -55,11 +55,11 @@ class PromotionalBanner extends StatelessWidget {
               ),
             ],
           ),
-          Image.asset(
-            AppAssets.kBike,
-            height: 100.h,
-            fit: BoxFit.cover,
-          )
+          // Image.asset(
+          //   AppAssets.kBike,
+          //   height: 100.h,
+          //   fit: BoxFit.cover,
+          // )
         ],
       ),
     );
