@@ -14,33 +14,36 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          centerTitle: false,
-          automaticallyImplyLeading: false,
-          titleSpacing: 20.w,
-          title: Text("Discover", style: AppTypography.kBold22),
-          actions: [
-            Padding(
-              padding: EdgeInsets.only(right: 20.w),
-              child: const Icon(
-                CupertinoIcons.search,
-                color: AppColors.kBlackColor,
-              ),
+      appBar: AppBar(
+        centerTitle: false,
+        automaticallyImplyLeading: false,
+        titleSpacing: 20.w,
+        title: Text("Discover", style: AppTypography.kBold22),
+        actions: [
+          Padding(
+            padding: EdgeInsets.only(right: 20.w),
+            child: const Icon(
+              CupertinoIcons.search,
+              color: AppColors.kBlackColor,
             ),
-          ],
-        ),
-        body: DefaultTabController(
-          length: 3,
+          ),
+        ],
+      ),
+      body: DefaultTabController(
+        length: 3,
+        child: Padding(
+          padding: EdgeInsets.only(left: 20.w),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 10.h),
               const TabbarWidget(),
-              SizedBox(height: 20.h),
+              SizedBox(height: 26.h),
               SizedBox(
-                height: 260.h,
+                height: 300.h,
                 width: Get.width,
                 child: ListView.separated(
-                  padding: EdgeInsets.symmetric(horizontal: 20.w),
+                  padding: EdgeInsets.only(right: 20.w),
                   separatorBuilder: (context, index) => SizedBox(width: 10.w),
                   scrollDirection: Axis.horizontal,
                   itemCount: tileModelList.length,
@@ -52,8 +55,24 @@ class HomeScreen extends StatelessWidget {
                   },
                 ),
               ),
+              SizedBox(height: 30.h),
+              Text(
+                "Top Destinations",
+                style: AppTypography.kBold20,
+              ),
+              SizedBox(height: 10.h),
+              Container(
+                height: 70.h,
+                width: 130.w,
+                decoration: BoxDecoration(
+                  color: AppColors.kDarkGreyColor.withOpacity(0.1),
+                  borderRadius: BorderRadius.circular(20.r),
+                ),
+              ),
             ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
