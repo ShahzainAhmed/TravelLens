@@ -19,7 +19,7 @@ class LargeTiles extends StatelessWidget {
       onTap: onTap,
       child: Container(
         padding: const EdgeInsets.all(20),
-        width: 220.w,
+        width: 224.w,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30.r),
           image: DecorationImage(
