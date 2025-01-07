@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:motorbike_app/models/tile_model.dart';
-import 'package:motorbike_app/resources/app_colors.dart';
-import 'package:motorbike_app/resources/app_typography.dart';
+import 'package:travel_lens/models/tile_model.dart';
+import 'package:travel_lens/resources/app_colors.dart';
+import 'package:travel_lens/resources/app_typography.dart';
 
 class BikeDetailsCard extends StatelessWidget {
   final ProductTileModel productTileModel;

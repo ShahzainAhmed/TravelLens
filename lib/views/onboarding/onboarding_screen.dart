@@ -3,11 +3,11 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:motorbike_app/resources/app_assets.dart';
-import 'package:motorbike_app/resources/app_colors.dart';
-import 'package:motorbike_app/resources/app_typography.dart';
-import 'package:motorbike_app/routes/app_routes.dart';
-import 'package:motorbike_app/views/onboarding/widgets/primary_button.dart';
+import 'package:travel_lens/resources/app_assets.dart';
+import 'package:travel_lens/resources/app_colors.dart';
+import 'package:travel_lens/resources/app_typography.dart';
+import 'package:travel_lens/routes/app_routes.dart';
+import 'package:travel_lens/views/onboarding/widgets/primary_button.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});

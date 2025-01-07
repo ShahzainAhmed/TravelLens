@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
-import 'package:motorbike_app/resources/app_colors.dart';
+import 'package:travel_lens/resources/app_colors.dart';
 
 class FavoriteButton extends StatelessWidget {
   const FavoriteButton({

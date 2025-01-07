@@ -2,12 +2,12 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:motorbike_app/models/tile_model.dart';
-import 'package:motorbike_app/resources/app_colors.dart';
-import 'package:motorbike_app/resources/app_typography.dart';
-import 'package:motorbike_app/views/detail_screen/widget/bike_details_card.dart';
-import 'package:motorbike_app/views/detail_screen/widget/bottom_sheet_widget.dart';
-import 'package:motorbike_app/views/detail_screen/widget/like_button.dart';
+import 'package:travel_lens/models/tile_model.dart';
+import 'package:travel_lens/resources/app_colors.dart';
+import 'package:travel_lens/resources/app_typography.dart';
+import 'package:travel_lens/views/detail_screen/widget/bike_details_card.dart';
+import 'package:travel_lens/views/detail_screen/widget/bottom_sheet_widget.dart';
+import 'package:travel_lens/views/detail_screen/widget/like_button.dart';
 
 class DetailScreen extends StatefulWidget {
   const DetailScreen({super.key});

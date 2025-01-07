@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:motorbike_app/resources/app_assets.dart';
-import 'package:motorbike_app/resources/app_colors.dart';
+import 'package:travel_lens/resources/app_assets.dart';
+import 'package:travel_lens/resources/app_colors.dart';
 
 class ProductTileModel {
   final String rating;

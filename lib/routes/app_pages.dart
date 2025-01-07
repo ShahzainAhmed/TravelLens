@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
-import 'package:motorbike_app/routes/app_routes.dart';
-import 'package:motorbike_app/views/detail_screen/detail_screen.dart';
-import 'package:motorbike_app/views/home/home_screen.dart';
-import 'package:motorbike_app/views/onboarding/onboarding_screen.dart';
+import 'package:travel_lens/routes/app_routes.dart';
+import 'package:travel_lens/views/detail_screen/detail_screen.dart';
+import 'package:travel_lens/views/home/home_screen.dart';
+import 'package:travel_lens/views/onboarding/onboarding_screen.dart';
 
 class AppPages {
   AppPages._(); // private
