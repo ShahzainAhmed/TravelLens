@@ -1,5 +1,5 @@
-import 'package:animate_do/animate_do.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:bounce/bounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -69,10 +69,13 @@ class OnboardingScreen extends StatelessWidget {
                         size: 50,
                         color: AppColors.kWhiteColor.withOpacity(0.9),
                       ),
-                      CircleAvatar(
-                        radius: 36.r,
-                        backgroundColor: AppColors.kWhiteColor,
-                        child: Text("Go", style: AppTypography.kMedium22),
+                      Bounce(
+                        onTap: () => Get.toNamed(AppRoutes.homescreen),
+                        child: CircleAvatar(
+                          radius: 36.r,
+                          backgroundColor: AppColors.kWhiteColor,
+                          child: Text("Go", style: AppTypography.kMedium22),
+                        ),
                       )
                     ],
                   ),
