@@ -1,5 +1,5 @@
 class AppAssets {
-  static const kOnboarding = 'assets/onboarding.png';
+  static const kOnboarding = 'assets/onboarding.jpg';
   static const kBike = 'assets/bike.png';
   static const kBike1 = 'assets/bike1.png';
   static const kBike2 = 'assets/bike2.png';
