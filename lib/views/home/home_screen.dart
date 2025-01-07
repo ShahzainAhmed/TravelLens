@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:travel_lens/models/tile_model.dart';
+import 'package:travel_lens/resources/app_assets.dart';
 import 'package:travel_lens/resources/app_colors.dart';
 import 'package:travel_lens/resources/app_typography.dart';
+import 'package:travel_lens/views/home/widgets/small_tiles.dart';
 import 'package:travel_lens/views/home/widgets/tabbar_widget.dart';
 import 'package:travel_lens/views/home/widgets/tiles.dart';
 
@@ -31,46 +33,39 @@ class HomeScreen extends StatelessWidget {
       ),
       body: DefaultTabController(
         length: 3,
-        child: Padding(
-          padding: EdgeInsets.only(left: 20.w),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(height: 10.h),
-              const TabbarWidget(),
-              SizedBox(height: 26.h),
-              SizedBox(
-                height: 300.h,
-                width: Get.width,
-                child: ListView.separated(
-                  padding: EdgeInsets.only(right: 20.w),
-                  separatorBuilder: (context, index) => SizedBox(width: 10.w),
-                  scrollDirection: Axis.horizontal,
-                  itemCount: tileModelList.length,
-                  itemBuilder: (context, index) {
-                    return LargeTiles(
-                      tileModel: tileModelList[index],
-                      onTap: () {},
-                    );
-                  },
-                ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: 10.h),
+            const TabbarWidget(),
+            SizedBox(height: 26.h),
+            SizedBox(
+              height: 300.h,
+              width: Get.width,
+              child: ListView.separated(
+                padding: EdgeInsets.symmetric(horizontal: 20.w),
+                separatorBuilder: (context, index) => SizedBox(width: 14.w),
+                scrollDirection: Axis.horizontal,
+                itemCount: tileModelList.length,
+                itemBuilder: (context, index) {
+                  return LargeTiles(
+                    tileModel: tileModelList[index],
+                    onTap: () {},
+                  );
+                },
               ),
-              SizedBox(height: 30.h),
-              Text(
+            ),
+            SizedBox(height: 30.h),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
+              child: Text(
                 "Top Destinations",
                 style: AppTypography.kBold20,
               ),
-              SizedBox(height: 10.h),
-              Container(
-                height: 70.h,
-                width: 130.w,
-                decoration: BoxDecoration(
-                  color: AppColors.kDarkGreyColor.withOpacity(0.1),
-                  borderRadius: BorderRadius.circular(20.r),
-                ),
-              ),
-            ],
-          ),
+            ),
+            SizedBox(height: 10.h),
+            const SmallTiles(),
+          ],
         ),
       ),
     );
