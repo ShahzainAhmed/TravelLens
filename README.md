@@ -1,1 +1,1 @@
-# TravelLens
+# Travel Lens - Flutter App
