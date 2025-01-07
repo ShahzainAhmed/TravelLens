@@ -27,30 +27,54 @@ class LargeTiles extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
+        child: Stack(
           children: [
-            Container(
-              decoration: BoxDecoration(
-                color: AppColors.kWhiteColor,
-                borderRadius: BorderRadius.circular(16.r),
-              ),
-              height: 50.h,
-              width: Get.width,
-              child: ListTile(
-                title: Text(
-                  tileModel.title,
-                  style: AppTypography.kBold14
-                      .copyWith(color: AppColors.kBlackColor),
-                ),
-                subtitle: Text(
-                  tileModel.subtitle,
-                  style: AppTypography.kMedium12.copyWith(
-                    color: AppColors.kDarkGreyColor.withOpacity(0.6),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Container(
+                  height: 50.h,
+                  width: Get.width,
+                  decoration: BoxDecoration(
+                    color: AppColors.kWhiteColor,
+                    borderRadius: BorderRadius.circular(16.r),
                   ),
+                  child: ListTile(
+                    title: Text(
+                      tileModel.title,
+                      style: AppTypography.kBold14
+                          .copyWith(color: AppColors.kBlackColor),
+                    ),
+                    subtitle: Text(
+                      tileModel.subtitle,
+                      style: AppTypography.kMedium12.copyWith(
+                        color: AppColors.kDarkGreyColor.withOpacity(0.6),
+                      ),
+                    ),
+                  ),
+                )
+              ],
+            ),
+            Positioned(
+              right: 28,
+              bottom: 60,
+              child: Container(
+                height: 14.h,
+                padding: EdgeInsets.symmetric(horizontal: 8.w),
+                decoration: BoxDecoration(
+                  color: AppColors.kWhiteColor,
+                  borderRadius: BorderRadius.circular(10.r),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const Icon(Icons.star, color: Colors.amber, size: 16),
+                    SizedBox(width: 2.w),
+                    Text("4.8", style: AppTypography.kMedium10),
+                  ],
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
