@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:travel_lens/models/tile_model.dart';
-import 'package:travel_lens/resources/app_assets.dart';
 import 'package:travel_lens/resources/app_colors.dart';
 import 'package:travel_lens/resources/app_typography.dart';
 import 'package:travel_lens/views/home/widgets/tiles.dart';
@@ -29,25 +28,51 @@ class HomeScreen extends StatelessWidget {
             ),
           ],
         ),
-        body: Column(
-          children: [
-            SizedBox(
-              height: 260.h,
-              width: Get.width,
-              child: ListView.separated(
-                padding: EdgeInsets.symmetric(horizontal: 20.w),
-                separatorBuilder: (context, index) => SizedBox(width: 10.w),
-                scrollDirection: Axis.horizontal,
-                itemCount: tileModelList.length,
-                itemBuilder: (context, index) {
-                  return LargeTiles(
-                    tileModel: tileModelList[index],
-                    onTap: () {},
-                  );
-                },
+        body: DefaultTabController(
+          length: 3,
+          child: Column(
+            children: [
+              SizedBox(height: 10.h),
+              TabBar(
+                tabAlignment: TabAlignment.start,
+                dividerColor: AppColors.kTransparentColor,
+                padding: EdgeInsets.zero,
+                isScrollable: true,
+                indicatorPadding: EdgeInsets.zero,
+                labelPadding: EdgeInsets.symmetric(horizontal: 20.w),
+                tabs: const [
+                  Tab(text: "Jungle"),
+                  Tab(text: "Beach"),
+                  Tab(text: "Mountain"),
+                  Tab(text: "Water"),
+                  Tab(text: "River")
+                ],
+                labelColor: AppColors.kBlackColor,
+                unselectedLabelColor: AppColors.kDarkGreyColor,
+                labelStyle: AppTypography.kBold16,
+                unselectedLabelStyle: AppTypography.kMedium16,
+                indicatorColor: AppColors.kBlackColor,
+                indicatorSize: TabBarIndicatorSize.label,
               ),
-            ),
-          ],
+              SizedBox(height: 20.h),
+              SizedBox(
+                height: 260.h,
+                width: Get.width,
+                child: ListView.separated(
+                  padding: EdgeInsets.symmetric(horizontal: 20.w),
+                  separatorBuilder: (context, index) => SizedBox(width: 10.w),
+                  scrollDirection: Axis.horizontal,
+                  itemCount: tileModelList.length,
+                  itemBuilder: (context, index) {
+                    return LargeTiles(
+                      tileModel: tileModelList[index],
+                      onTap: () {},
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
         ));
   }
 }
