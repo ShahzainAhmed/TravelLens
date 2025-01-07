@@ -19,7 +19,7 @@ class LargeTiles extends StatelessWidget {
       onTap: onTap,
       child: Container(
         padding: const EdgeInsets.all(20),
-        width: 200.w,
+        width: 220.w,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30.r),
           image: DecorationImage(
@@ -60,10 +60,10 @@ class LargeTiles extends StatelessWidget {
               bottom: 60,
               child: Container(
                 height: 14.h,
-                padding: EdgeInsets.symmetric(horizontal: 8.w),
+                padding: EdgeInsets.symmetric(horizontal: 6.w),
                 decoration: BoxDecoration(
                   color: AppColors.kWhiteColor,
-                  borderRadius: BorderRadius.circular(10.r),
+                  borderRadius: BorderRadius.circular(8.r),
                 ),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
