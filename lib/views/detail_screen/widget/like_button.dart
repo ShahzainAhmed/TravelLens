@@ -3,9 +3,7 @@ import 'package:like_button/like_button.dart';
 import 'package:travel_lens/resources/app_colors.dart';
 
 class FavoriteButton extends StatelessWidget {
-  const FavoriteButton({
-    super.key,
-  });
+  const FavoriteButton({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,17 +11,17 @@ class FavoriteButton extends StatelessWidget {
       padding: EdgeInsets.zero,
       size: 20,
       circleColor: const CircleColor(
-        start: AppColors.kWhiteColor,
-        end: AppColors.kWhiteColor,
+        start: AppColors.kBlackColor,
+        end: AppColors.kBlackColor,
       ),
       bubblesColor: const BubblesColor(
-        dotPrimaryColor: AppColors.kWhiteColor,
-        dotSecondaryColor: AppColors.kWhiteColor,
+        dotPrimaryColor: AppColors.kBlackColor,
+        dotSecondaryColor: AppColors.kBlackColor,
       ),
       likeBuilder: (bool isLiked) {
         return Icon(
           isLiked ? Icons.favorite_rounded : Icons.favorite_outline,
-          color: isLiked ? AppColors.kWhiteColor : AppColors.kWhiteColor,
+          color: isLiked ? AppColors.kBlackColor : AppColors.kBlackColor,
           size: 24,
         );
       },

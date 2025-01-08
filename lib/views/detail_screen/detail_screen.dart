@@ -5,6 +5,7 @@ import 'package:travel_lens/models/tile_model.dart';
 import 'package:travel_lens/resources/app_colors.dart';
 import 'package:travel_lens/resources/app_typography.dart';
 import 'package:travel_lens/views/detail_screen/widget/bottom_sheet_widget.dart';
+import 'package:travel_lens/views/detail_screen/widget/like_button.dart';
 import 'package:travel_lens/views/detail_screen/widget/specs_widget.dart';
 
 class DetailScreen extends StatefulWidget {
@@ -50,10 +51,7 @@ class _DetailScreenState extends State<DetailScreen> {
               CircleAvatar(
                 backgroundColor: AppColors.kWhiteColor.withOpacity(0.7),
                 radius: 24,
-                child: IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.favorite_border),
-                ),
+                child: const FavoriteButton(),
               )
             ],
           ),
