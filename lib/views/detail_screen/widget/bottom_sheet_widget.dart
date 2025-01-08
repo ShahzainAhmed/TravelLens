@@ -1,36 +1,58 @@
 import 'package:bounce/bounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 import 'package:travel_lens/resources/app_colors.dart';
 import 'package:travel_lens/resources/app_typography.dart';
 
 class BottomSheetWidget extends StatelessWidget {
-  final Color color;
-  const BottomSheetWidget({super.key, required this.color});
+  final String price;
+  const BottomSheetWidget({super.key, required this.price});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
-      child: SizedBox(
-        height: 45.h,
-        width: Get.width,
-        child: Bounce(
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
-            decoration: BoxDecoration(
-              color: color,
-              borderRadius: BorderRadius.circular(100.r),
-            ),
-            child: Center(
-                child: Text(
-              "Buy now",
-              style:
-                  AppTypography.kBold14.copyWith(color: AppColors.kWhiteColor),
-            )),
+      padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 20.h),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Total Price",
+                style: AppTypography.kLight16.copyWith(
+                  color: AppColors.kDarkGreyColor.withOpacity(0.8),
+                ),
+              ),
+              Text(
+                price,
+                style: AppTypography.kExtraBold30.copyWith(
+                  color: AppColors.kBlackColor,
+                ),
+              )
+            ],
           ),
-        ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Bounce(
+                child: CircleAvatar(
+                  radius: 38.r,
+                  backgroundColor: AppColors.kBlackColor,
+                  child: const Center(
+                    child: Icon(
+                      size: 40,
+                      Icons.arrow_forward_ios_rounded,
+                      color: AppColors.kWhiteColor,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }

@@ -86,7 +86,7 @@ class HomeScreen extends StatelessWidget {
                     onTap: () {
                       Get.toNamed(
                         AppRoutes.detailScreen,
-                        arguments: tileModelList[index],
+                        arguments: tileModelList.reversed.toList()[index],
                       );
                     },
                   );
