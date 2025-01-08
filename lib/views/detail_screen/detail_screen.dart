@@ -29,6 +29,36 @@ class _DetailScreenState extends State<DetailScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        centerTitle: false,
+        automaticallyImplyLeading: false,
+        title: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16.w),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              CircleAvatar(
+                radius: 24,
+                backgroundColor: AppColors.kWhiteColor.withOpacity(0.7),
+                child: IconButton(
+                  onPressed: () => Get.back(),
+                  icon: const Icon(Icons.arrow_back_ios_new),
+                ),
+              ),
+              CircleAvatar(
+                backgroundColor: AppColors.kWhiteColor.withOpacity(0.7),
+                radius: 24,
+                child: IconButton(
+                  onPressed: () {},
+                  icon: const Icon(Icons.favorite_border),
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
