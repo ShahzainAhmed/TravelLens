@@ -43,6 +43,7 @@ class HomeScreen extends StatelessWidget {
               height: 300.h,
               width: Get.width,
               child: ListView.separated(
+                physics: const BouncingScrollPhysics(),
                 padding: EdgeInsets.symmetric(horizontal: 20.w),
                 separatorBuilder: (context, index) => SizedBox(width: 14.w),
                 scrollDirection: Axis.horizontal,
@@ -64,7 +65,21 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 10.h),
-            const SmallTiles(),
+            SizedBox(
+              height: 65.h,
+              width: Get.width,
+              child: ListView.separated(
+                physics: const BouncingScrollPhysics(),
+                padding: EdgeInsets.symmetric(horizontal: 20.w),
+                scrollDirection: Axis.horizontal,
+                separatorBuilder: (context, index) => SizedBox(width: 14.w),
+                itemBuilder: (context, index) {
+                  return SmallTiles(
+                      tileModel: tileModelList.reversed.toList()[index]);
+                },
+                itemCount: tileModelList.length,
+              ),
+            ),
           ],
         ),
       ),

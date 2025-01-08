@@ -27,4 +27,28 @@ List tileModelList = [
     rating: "4.7",
     image: AppAssets.kPicture2,
   ),
+  TileModel(
+    title: "Redeemer",
+    subtitle: "Brazil, South America",
+    rating: "4.7",
+    image: AppAssets.kPicture4,
+  ),
+  TileModel(
+    title: "Sugarloaf Mountain",
+    subtitle: "Brazil, South America",
+    rating: "4.7",
+    image: AppAssets.kPicture5,
+  ),
+  TileModel(
+    title: "Salvador",
+    subtitle: "Brazil, South America",
+    rating: "4.7",
+    image: AppAssets.kPicture3,
+  ),
+  TileModel(
+    title: "Rainforest",
+    subtitle: "Brazil, South America",
+    rating: "4.7",
+    image: AppAssets.kPicture6,
+  ),
 ];
