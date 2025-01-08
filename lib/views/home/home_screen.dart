@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:travel_lens/models/tile_model.dart';
 import 'package:travel_lens/resources/app_colors.dart';
 import 'package:travel_lens/resources/app_typography.dart';
+import 'package:travel_lens/routes/app_routes.dart';
 import 'package:travel_lens/views/home/widgets/bottom_navbar_widget.dart';
 import 'package:travel_lens/views/home/widgets/small_tiles.dart';
 import 'package:travel_lens/views/home/widgets/tabbar_widget.dart';
@@ -51,7 +52,12 @@ class HomeScreen extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return LargeTiles(
                     tileModel: tileModelList[index],
-                    onTap: () {},
+                    onTap: () {
+                      Get.toNamed(
+                        AppRoutes.detailScreen,
+                        arguments: tileModelList[index],
+                      );
+                    },
                   );
                 },
               ),
@@ -77,6 +83,12 @@ class HomeScreen extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return SmallTiles(
                     tileModel: tileModelList.reversed.toList()[index],
+                    onTap: () {
+                      Get.toNamed(
+                        AppRoutes.detailScreen,
+                        arguments: tileModelList[index],
+                      );
+                    },
                   );
                 },
               ),

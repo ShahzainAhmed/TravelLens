@@ -162,6 +162,9 @@ class AppTypography {
   static TextStyle kExtraBold16 =
       GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w700);
 
+  static TextStyle kExtraBold18 =
+      GoogleFonts.outfit(fontSize: 18.sp, fontWeight: FontWeight.w700);
+
   static TextStyle kExtraBold20 =
       GoogleFonts.outfit(fontSize: 20.sp, fontWeight: FontWeight.w700);
 

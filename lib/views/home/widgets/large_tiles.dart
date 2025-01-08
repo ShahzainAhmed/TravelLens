@@ -59,7 +59,7 @@ class LargeTiles extends StatelessWidget {
               right: 28,
               bottom: 60,
               child: Container(
-                height: 14.h,
+                height: 15.h,
                 padding: EdgeInsets.symmetric(horizontal: 6.w),
                 decoration: BoxDecoration(
                   color: AppColors.kWhiteColor,
