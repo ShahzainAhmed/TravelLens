@@ -1,4 +1,5 @@
 import 'package:animate_do/animate_do.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -22,7 +23,16 @@ class HomeScreen extends StatelessWidget {
         centerTitle: false,
         automaticallyImplyLeading: false,
         titleSpacing: 20.w,
-        title: Text("Discover", style: AppTypography.kBold22),
+        title: AnimatedTextKit(
+          isRepeatingAnimation: false,
+          animatedTexts: [
+            TyperAnimatedText(
+              "Discover",
+              textStyle: AppTypography.kBold22,
+              speed: const Duration(milliseconds: 150),
+            ),
+          ],
+        ),
         actions: [
           Padding(
             padding: EdgeInsets.only(right: 20.w),
@@ -77,9 +87,15 @@ class HomeScreen extends StatelessWidget {
               child: FadeInUp(
                 controller: (controller) => controller = controller,
                 delay: const Duration(milliseconds: 500),
-                child: Text(
-                  "Top Destinations",
-                  style: AppTypography.kBold20,
+                child: AnimatedTextKit(
+                  isRepeatingAnimation: false,
+                  animatedTexts: [
+                    TyperAnimatedText(
+                      speed: const Duration(milliseconds: 150),
+                      "Top Destinations",
+                      textStyle: AppTypography.kBold20,
+                    ),
+                  ],
                 ),
               ),
             ),
