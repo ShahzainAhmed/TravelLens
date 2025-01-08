@@ -9,6 +9,7 @@ class TabbarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TabBar(
+      splashBorderRadius: BorderRadius.circular(20.r),
       tabAlignment: TabAlignment.start,
       dividerColor: AppColors.kTransparentColor,
       padding: EdgeInsets.zero,

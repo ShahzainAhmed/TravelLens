@@ -70,7 +70,7 @@ class LargeTiles extends StatelessWidget {
                   children: [
                     const Icon(Icons.star, color: Colors.amber, size: 16),
                     SizedBox(width: 2.w),
-                    Text("4.8", style: AppTypography.kMedium10),
+                    Text(tileModel.rating, style: AppTypography.kMedium10),
                   ],
                 ),
               ),

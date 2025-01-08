@@ -17,11 +17,11 @@ class DetailScreen extends StatefulWidget {
 }
 
 class _DetailScreenState extends State<DetailScreen> {
-  late TileModel productTileModel;
+  late TileModel tileModel;
 
   @override
   void initState() {
-    productTileModel = Get.arguments;
+    tileModel = Get.arguments;
     super.initState();
   }
 
@@ -30,122 +30,6 @@ class _DetailScreenState extends State<DetailScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new),
-          onPressed: () async {
-            setState(() {
-              animate = !animate;
-            });
-            await Future.delayed(const Duration(milliseconds: 700));
-            Get.back();
-          },
-        ),
-        actions: [
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.w),
-            child: const Icon(Icons.share_outlined),
-          )
-        ],
-      ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20.w),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Center(
-                child: FadeInUp(
-                  animate: animate,
-                  controller: (controller) => controller = controller,
-                  delay: const Duration(milliseconds: 200),
-                  child: Image.asset(
-                    productTileModel.image,
-                    height: Get.height * 0.24,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-              ListTile(
-                contentPadding: EdgeInsets.zero,
-                title: FadeInUp(
-                  animate: animate,
-                  controller: (controller) => controller = controller,
-                  delay: const Duration(milliseconds: 300),
-                  child: Text(
-                    "productTileModel.name",
-                    style: AppTypography.kExtraBold20
-                        .copyWith(color: AppColors.kGreyColor),
-                  ),
-                ),
-                subtitle: FadeInUp(
-                  animate: animate,
-                  controller: (controller) => controller = controller,
-                  delay: const Duration(milliseconds: 400),
-                  child: Text(
-                    "By ",
-                    style: AppTypography.kMedium16
-                        .copyWith(color: AppColors.kGreyColor.withOpacity(0.4)),
-                  ),
-                ),
-                trailing: FadeInUp(
-                  animate: animate,
-                  controller: (controller) => controller = controller,
-                  delay: const Duration(milliseconds: 500),
-                  child: CircleAvatar(
-                    radius: 20.r,
-                    // backgroundColor: productTileModel.color,
-                    child: FadeInUp(
-                      animate: animate,
-                      controller: (controller) => controller = controller,
-                      delay: const Duration(milliseconds: 600),
-                      child: const FavoriteButton(),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(height: 10.h),
-              FadeInUp(
-                animate: animate,
-                controller: (controller) => controller = controller,
-                delay: const Duration(milliseconds: 700),
-                child: BikeDetailsCard(productTileModel: productTileModel),
-              ),
-              SizedBox(height: 26.h),
-              FadeInUp(
-                animate: animate,
-                controller: (controller) => controller = controller,
-                delay: const Duration(milliseconds: 800),
-                child: Text(
-                  "Bike Details",
-                  style: AppTypography.kExtraBold16
-                      .copyWith(color: AppColors.kGreyColor),
-                ),
-              ),
-              SizedBox(height: 10.h),
-              FadeInUp(
-                animate: animate,
-                controller: (controller) => controller = controller,
-                delay: const Duration(milliseconds: 900),
-                child: Text(
-                  " productTileModel.description",
-                  style: AppTypography.kMedium12
-                      .copyWith(color: AppColors.kGreyColor.withOpacity(0.6)),
-                  textAlign: TextAlign.justify,
-                ),
-              ),
-              SizedBox(height: 200.h),
-            ],
-          ),
-        ),
-      ),
-      bottomSheet: FadeInUp(
-        animate: animate,
-        controller: (controller) => controller = controller,
-        delay: const Duration(milliseconds: 600),
-        child: const BottomSheetWidget(color: Colors.orange),
-      ),
-    );
+    return const Scaffold();
   }
 }

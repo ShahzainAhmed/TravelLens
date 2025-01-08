@@ -1,34 +1,17 @@
-import 'package:curved_labeled_navigation_bar/curved_navigation_bar.dart';
-import 'package:curved_labeled_navigation_bar/curved_navigation_bar_item.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:travel_lens/models/tile_model.dart';
-import 'package:travel_lens/resources/app_assets.dart';
 import 'package:travel_lens/resources/app_colors.dart';
 import 'package:travel_lens/resources/app_typography.dart';
+import 'package:travel_lens/views/home/widgets/bottom_navbar_widget.dart';
 import 'package:travel_lens/views/home/widgets/small_tiles.dart';
 import 'package:travel_lens/views/home/widgets/tabbar_widget.dart';
-import 'package:travel_lens/views/home/widgets/tiles.dart';
+import 'package:travel_lens/views/home/widgets/large_tiles.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
-
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  int _bottomNavIndex = 0;
-
-  // Icon list for the navigation bar
-  final iconList = <IconData>[
-    Icons.home,
-    Icons.search,
-    Icons.favorite,
-    Icons.person,
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -101,59 +84,10 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-      bottomNavigationBar: CurvedNavigationBar(
-        onTap: (index) {
-          setState(() {
-            _bottomNavIndex = index;
-          });
-        },
-        buttonBackgroundColor: AppColors.kBlackColor,
-        backgroundColor: AppColors.kBackgroundColor,
-        color: AppColors.kDarkGreyColor.withOpacity(0.1),
-        items: [
-          CurvedNavigationBarItem(
-            child: Icon(
-              size: _bottomNavIndex == 0 ? 30 : 26,
-              Icons.home_outlined,
-              color: _bottomNavIndex == 0
-                  ? AppColors.kWhiteColor
-                  : AppColors.kDarkGreyColor,
-            ),
-          ),
-          CurvedNavigationBarItem(
-            child: Icon(
-              Icons.my_location_sharp,
-              size: _bottomNavIndex == 1 ? 30 : 26,
-              color: _bottomNavIndex == 1
-                  ? AppColors.kWhiteColor
-                  : AppColors.kDarkGreyColor,
-            ),
-          ),
-          CurvedNavigationBarItem(
-            child: Icon(
-              Icons.person_outline,
-              size: _bottomNavIndex == 2 ? 30 : 26,
-              color: _bottomNavIndex == 2
-                  ? AppColors.kWhiteColor
-                  : AppColors.kDarkGreyColor,
-            ),
-          ),
-          CurvedNavigationBarItem(
-            child: Icon(
-              size: _bottomNavIndex == 3 ? 30 : 26,
-              Icons.favorite_outline,
-              color: _bottomNavIndex == 3
-                  ? AppColors.kWhiteColor
-                  : AppColors.kDarkGreyColor,
-            ),
-          ),
-        ],
-      ),
+      bottomNavigationBar: const BottomNavbarWidget(),
     );
   }
 }
-
-
 
 /* 
 When you call the reversed property on a list in Dart, it does not return a new list but rather returns a ReversedListIterable. This is a lazy iterable that allows iterating over the elements of the original list in reverse order without creating a new list in memory.

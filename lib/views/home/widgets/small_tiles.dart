@@ -1,13 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 import 'package:travel_lens/models/tile_model.dart';
-import 'package:travel_lens/resources/app_assets.dart';
 import 'package:travel_lens/resources/app_colors.dart';
 import 'package:travel_lens/resources/app_typography.dart';
-import 'package:travel_lens/views/home/widgets/tabbar_widget.dart';
-import 'package:travel_lens/views/home/widgets/tiles.dart';
 
 class SmallTiles extends StatelessWidget {
   final TileModel tileModel;
