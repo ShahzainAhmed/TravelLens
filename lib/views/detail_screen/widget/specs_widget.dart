@@ -25,7 +25,7 @@ class SpecsWidget extends StatelessWidget {
           color: AppColors.kDarkGreyColor.withOpacity(0.5),
           width: 0.5,
         ),
-        borderRadius: BorderRadius.circular(20.r),
+        borderRadius: BorderRadius.circular(24.r),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

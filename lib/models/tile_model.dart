@@ -32,7 +32,7 @@ List<TileModel> tileModelList = [
     temp: "28",
     price: "1270",
     description:
-        "This is the shortest of three routes, but certainly not any less interesting. The North Wales way leads you in 120 Km from Abrgwygregyn to the beautiful island of Anglessey...", // Populated description
+        "This is the shortest of three routes, but certainly not any less interesting. The North Wales way leads you in 120 Km from Abrgwygregyn to the beautiful island of Anglessey.",
   ),
   TileModel(
     title: "Rio Dee Janeiro",
@@ -43,7 +43,7 @@ List<TileModel> tileModelList = [
     temp: "30",
     price: "1550",
     description:
-        "A vibrant city known for its beaches, carnival, and the iconic Christ the Redeemer statue. Rio offers a mixture of rich cultural experiences, thrilling adventure sports, and scenic views.", // Populated description
+        "A vibrant city known for its beaches, carnival, and the iconic Christ the Redeemer statue. Rio offers a mixture of rich cultural experiences, thrilling adventure sports, and scenic views.",
   ),
   TileModel(
     title: "Redeemer",
@@ -54,7 +54,7 @@ List<TileModel> tileModelList = [
     temp: "32",
     price: "1350",
     description:
-        "The Christ the Redeemer statue, one of the New Seven Wonders of the World, stands on the Corcovado Mountain and overlooks Rio de Janeiro. It's a must-visit landmark.", // Populated description
+        "The Christ the Redeemer statue, one of the New Seven Wonders of the World, stands on the Corcovado Mountain and overlooks Rio de Janeiro. It's a must-visit landmark.",
   ),
   TileModel(
     title: "Sugarloaf Mountain",
@@ -65,7 +65,7 @@ List<TileModel> tileModelList = [
     temp: "27",
     price: "1200",
     description:
-        "Sugarloaf Mountain offers panoramic views of Rio de Janeiro. You can take a cable car to the top, providing stunning sights of the city, beaches, and bay.", // Populated description
+        "Sugarloaf Mountain offers panoramic views of Rio de Janeiro. You can take a cable car to the top, providing stunning sights of the city, beaches, and bay.",
   ),
   TileModel(
     title: "Salvador",
@@ -76,7 +76,7 @@ List<TileModel> tileModelList = [
     temp: "29",
     price: "1450",
     description:
-        "Salvador is a coastal city with a vibrant African influence, known for its colorful buildings, historic churches, and beautiful beaches. A place filled with culture and art.", // Populated description
+        "Salvador is a coastal city with a vibrant African influence, known for its colorful buildings, historic churches, and beautiful beaches. A place filled with culture and art.",
   ),
   TileModel(
     title: "Rainforest",
@@ -87,6 +87,6 @@ List<TileModel> tileModelList = [
     temp: "26",
     price: "1650",
     description:
-        "Explore the Amazon Rainforest, home to the world's most diverse ecosystem. A trip to the rainforest offers an incredible experience of nature, wildlife, and adventure.", // Populated description
+        "Explore the Amazon Rainforest, home to the world's most diverse ecosystem. A trip to the rainforest offers an incredible experience of nature, wildlife, and adventure.",
   ),
 ];
