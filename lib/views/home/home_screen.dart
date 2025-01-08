@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -38,7 +39,11 @@ class HomeScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: 10.h),
-            const TabbarWidget(),
+            FadeInUp(
+              controller: (controller) => controller = controller,
+              delay: const Duration(milliseconds: 300),
+              child: const TabbarWidget(),
+            ),
             SizedBox(height: 26.h),
             SizedBox(
               height: 300.h,
@@ -50,27 +55,35 @@ class HomeScreen extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 itemCount: tileModelList.length,
                 itemBuilder: (context, index) {
-                  return LargeTiles(
-                    tileModel: tileModelList[index],
-                    onTap: () {
-                      Get.toNamed(
-                        AppRoutes.detailScreen,
-                        arguments: tileModelList[index],
-                      );
-                    },
+                  return FadeInUp(
+                    controller: (controller) => controller = controller,
+                    duration: const Duration(milliseconds: 1500),
+                    child: LargeTiles(
+                      tileModel: tileModelList[index],
+                      onTap: () {
+                        Get.toNamed(
+                          AppRoutes.detailScreen,
+                          arguments: tileModelList[index],
+                        );
+                      },
+                    ),
                   );
                 },
               ),
             ),
-            SizedBox(height: 30.h),
+            SizedBox(height: 20.h),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.w),
-              child: Text(
-                "Top Destinations",
-                style: AppTypography.kBold20,
+              child: FadeInUp(
+                controller: (controller) => controller = controller,
+                delay: const Duration(milliseconds: 500),
+                child: Text(
+                  "Top Destinations",
+                  style: AppTypography.kBold20,
+                ),
               ),
             ),
-            SizedBox(height: 10.h),
+            SizedBox(height: 20.h),
             SizedBox(
               height: 65.h,
               width: Get.width,
@@ -81,14 +94,18 @@ class HomeScreen extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 separatorBuilder: (context, index) => SizedBox(width: 14.w),
                 itemBuilder: (context, index) {
-                  return SmallTiles(
-                    tileModel: tileModelList.reversed.toList()[index],
-                    onTap: () {
-                      Get.toNamed(
-                        AppRoutes.detailScreen,
-                        arguments: tileModelList.reversed.toList()[index],
-                      );
-                    },
+                  return FadeInUp(
+                    controller: (controller) => controller = controller,
+                    duration: const Duration(milliseconds: 1500),
+                    child: SmallTiles(
+                      tileModel: tileModelList.reversed.toList()[index],
+                      onTap: () {
+                        Get.toNamed(
+                          AppRoutes.detailScreen,
+                          arguments: tileModelList.reversed.toList()[index],
+                        );
+                      },
+                    ),
                   );
                 },
               ),

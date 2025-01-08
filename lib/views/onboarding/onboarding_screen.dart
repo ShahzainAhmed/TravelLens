@@ -83,7 +83,7 @@ class OnboardingScreen extends StatelessWidget {
                           ),
                         ),
                         BounceButton.Bounce(
-                          onTap: () => Get.toNamed(AppRoutes.homescreen),
+                          onTap: () => Get.offAllNamed(AppRoutes.homescreen),
                           child: BounceInDown(
                             controller: (controller) => controller = controller,
                             delay: const Duration(milliseconds: 1000),
