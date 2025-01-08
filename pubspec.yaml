@@ -42,6 +42,7 @@ dependencies:
   flutter_rating_bar: ^4.0.1
   cart_stepper: ^4.3.0
   shared_preferences: ^2.3.3
+  curved_labeled_navigation_bar: ^2.0.5
 
 dev_dependencies:
   flutter_test:

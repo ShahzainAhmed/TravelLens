@@ -1,3 +1,5 @@
+import 'package:curved_labeled_navigation_bar/curved_navigation_bar.dart';
+import 'package:curved_labeled_navigation_bar/curved_navigation_bar_item.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -10,8 +12,23 @@ import 'package:travel_lens/views/home/widgets/small_tiles.dart';
 import 'package:travel_lens/views/home/widgets/tabbar_widget.dart';
 import 'package:travel_lens/views/home/widgets/tiles.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  int _bottomNavIndex = 0;
+
+  // Icon list for the navigation bar
+  final iconList = <IconData>[
+    Icons.home,
+    Icons.search,
+    Icons.favorite,
+    Icons.person,
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +49,7 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
       body: DefaultTabController(
-        length: 3,
+        length: 5,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -69,20 +86,81 @@ class HomeScreen extends StatelessWidget {
               height: 65.h,
               width: Get.width,
               child: ListView.separated(
+                itemCount: tileModelList.length,
                 physics: const BouncingScrollPhysics(),
                 padding: EdgeInsets.symmetric(horizontal: 20.w),
                 scrollDirection: Axis.horizontal,
                 separatorBuilder: (context, index) => SizedBox(width: 14.w),
                 itemBuilder: (context, index) {
                   return SmallTiles(
-                      tileModel: tileModelList.reversed.toList()[index]);
+                    tileModel: tileModelList.reversed.toList()[index],
+                  );
                 },
-                itemCount: tileModelList.length,
               ),
             ),
           ],
         ),
       ),
+      bottomNavigationBar: CurvedNavigationBar(
+        onTap: (index) {
+          setState(() {
+            _bottomNavIndex = index;
+          });
+        },
+        buttonBackgroundColor: AppColors.kBlackColor,
+        backgroundColor: AppColors.kBackgroundColor,
+        color: AppColors.kDarkGreyColor.withOpacity(0.1),
+        items: [
+          CurvedNavigationBarItem(
+            child: Icon(
+              size: _bottomNavIndex == 0 ? 30 : 26,
+              Icons.home_outlined,
+              color: _bottomNavIndex == 0
+                  ? AppColors.kWhiteColor
+                  : AppColors.kDarkGreyColor,
+            ),
+          ),
+          CurvedNavigationBarItem(
+            child: Icon(
+              Icons.my_location_sharp,
+              size: _bottomNavIndex == 1 ? 30 : 26,
+              color: _bottomNavIndex == 1
+                  ? AppColors.kWhiteColor
+                  : AppColors.kDarkGreyColor,
+            ),
+          ),
+          CurvedNavigationBarItem(
+            child: Icon(
+              Icons.person_outline,
+              size: _bottomNavIndex == 2 ? 30 : 26,
+              color: _bottomNavIndex == 2
+                  ? AppColors.kWhiteColor
+                  : AppColors.kDarkGreyColor,
+            ),
+          ),
+          CurvedNavigationBarItem(
+            child: Icon(
+              size: _bottomNavIndex == 3 ? 30 : 26,
+              Icons.favorite_outline,
+              color: _bottomNavIndex == 3
+                  ? AppColors.kWhiteColor
+                  : AppColors.kDarkGreyColor,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
+
+
+
+/* 
+When you call the reversed property on a list in Dart, it does not return a new list but rather returns a ReversedListIterable. This is a lazy iterable that allows iterating over the elements of the original list in reverse order without creating a new list in memory.
+
+Why toList() is Needed
+The reversed property alone doesn't produce an actual list but an iterable. If you want to access elements by index (like tileModelList.reversed[index]), you must first convert the reversed iterable back to a list using .toList(). Without this conversion, index cannot be used directly on the ReversedListIterable.
+
+1) myList.reversed: Produces an iterable that lazily iterates over the elements in reverse order. It's not a list.
+2) reversedIterable.toList(): Creates a new list containing the reversed elements.
+ */
