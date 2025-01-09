@@ -63,7 +63,7 @@ class OnboardingScreen extends StatelessWidget {
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
                       colors: [
-                        AppColors.kSmokeColor.withOpacity(0.0),
+                        AppColors.kSmokeColor.withValues(alpha: 0.0),
                         AppColors.kSmokeColor,
                       ],
                     ),
@@ -79,7 +79,7 @@ class OnboardingScreen extends StatelessWidget {
                           child: Icon(
                             Icons.keyboard_double_arrow_up_sharp,
                             size: 50,
-                            color: AppColors.kWhiteColor.withOpacity(0.9),
+                            color: AppColors.kWhiteColor.withValues(alpha: 0.9),
                           ),
                         ),
                         BounceButton.Bounce(

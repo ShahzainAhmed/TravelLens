@@ -23,7 +23,7 @@ class BottomSheetWidget extends StatelessWidget {
               Text(
                 "Total Price",
                 style: AppTypography.kLight16.copyWith(
-                  color: AppColors.kDarkGreyColor.withOpacity(0.8),
+                  color: AppColors.kDarkGreyColor.withValues(alpha: 0.8),
                 ),
               ),
               Text(

@@ -48,7 +48,7 @@ class LargeTiles extends StatelessWidget {
                     subtitle: Text(
                       tileModel.subtitle,
                       style: AppTypography.kMedium12.copyWith(
-                        color: AppColors.kDarkGreyColor.withOpacity(0.6),
+                        color: AppColors.kDarkGreyColor.withValues(alpha: 0.6),
                       ),
                     ),
                   ),

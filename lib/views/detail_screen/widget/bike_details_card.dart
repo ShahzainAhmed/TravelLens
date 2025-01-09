@@ -47,7 +47,7 @@ class BikeDetailsCard extends StatelessWidget {
             ),
           ),
           VerticalDivider(
-            color: AppColors.kGreyColor.withOpacity(0.5),
+            color: AppColors.kGreyColor.withValues(alpha:0.5),
             thickness: 0.3,
             width: 10.w,
             indent: 20,
@@ -72,7 +72,7 @@ class BikeDetailsCard extends StatelessWidget {
             ),
           ),
           VerticalDivider(
-            color: AppColors.kGreyColor.withOpacity(0.5),
+            color: AppColors.kGreyColor.withValues(alpha:0.5),
             thickness: 0.3,
             width: 10.w,
             indent: 20,

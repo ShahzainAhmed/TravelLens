@@ -30,7 +30,7 @@ class _BottomNavbarWidgetState extends State<BottomNavbarWidget> {
       },
       buttonBackgroundColor: AppColors.kBlackColor,
       backgroundColor: AppColors.kBackgroundColor,
-      color: AppColors.kDarkGreyColor.withOpacity(0.1),
+      color: AppColors.kDarkGreyColor.withValues(alpha: 0.1),
       items: [
         CurvedNavigationBarItem(
           child: Icon(

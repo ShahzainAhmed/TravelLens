@@ -14,15 +14,19 @@ class ImageContainer extends StatelessWidget {
     return Stack(
       alignment: Alignment.bottomLeft,
       children: [
-        Container(
-          height: Get.height * 0.5,
-          width: Get.width,
-          decoration: BoxDecoration(
-            color: AppColors.kGreyColor,
-            borderRadius: BorderRadius.vertical(bottom: Radius.circular(70.r)),
-            image: DecorationImage(
-              image: AssetImage(tileModel.image),
-              fit: BoxFit.cover,
+        Hero(
+          tag: tileModel.image,
+          child: Container(
+            height: Get.height * 0.5,
+            width: Get.width,
+            decoration: BoxDecoration(
+              color: AppColors.kGreyColor,
+              borderRadius:
+                  BorderRadius.vertical(bottom: Radius.circular(70.r)),
+              image: DecorationImage(
+                image: AssetImage(tileModel.image),
+                fit: BoxFit.cover,
+              ),
             ),
           ),
         ),
@@ -35,7 +39,7 @@ class ImageContainer extends StatelessWidget {
               begin: Alignment.bottomCenter,
               end: Alignment.center,
               colors: [
-                AppColors.kBlackColor.withOpacity(0.6),
+                AppColors.kBlackColor.withValues(alpha: 0.6),
                 AppColors.kTransparentColor,
               ],
             ),

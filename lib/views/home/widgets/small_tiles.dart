@@ -18,7 +18,7 @@ class SmallTiles extends StatelessWidget {
         height: 65.h,
         width: 160.w,
         decoration: BoxDecoration(
-          color: AppColors.kDarkGreyColor.withOpacity(0.1),
+          color: AppColors.kDarkGreyColor.withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(22.r),
         ),
         child: Row(
@@ -44,7 +44,7 @@ class SmallTiles extends StatelessWidget {
                   Text(
                     "Brazil",
                     style: AppTypography.kLight12.copyWith(
-                      color: AppColors.kDarkGreyColor.withOpacity(0.6),
+                      color: AppColors.kDarkGreyColor.withValues(alpha: 0.6),
                     ),
                   ),
                 ],

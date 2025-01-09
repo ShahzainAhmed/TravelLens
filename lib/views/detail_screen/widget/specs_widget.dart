@@ -22,7 +22,7 @@ class SpecsWidget extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.kBackgroundColor,
         border: Border.all(
-          color: AppColors.kDarkGreyColor.withOpacity(0.5),
+          color: AppColors.kDarkGreyColor.withValues(alpha: 0.5),
           width: 0.5,
         ),
         borderRadius: BorderRadius.circular(24.r),

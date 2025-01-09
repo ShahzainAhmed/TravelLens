@@ -43,14 +43,14 @@ class _DetailScreenState extends State<DetailScreen> {
             children: [
               CircleAvatar(
                 radius: 24,
-                backgroundColor: AppColors.kWhiteColor.withOpacity(0.7),
+                backgroundColor: AppColors.kWhiteColor.withValues(alpha: 0.7),
                 child: IconButton(
                   onPressed: () => Get.back(),
                   icon: const Icon(Icons.arrow_back_ios_new),
                 ),
               ),
               CircleAvatar(
-                backgroundColor: AppColors.kWhiteColor.withOpacity(0.7),
+                backgroundColor: AppColors.kWhiteColor.withValues(alpha: 0.7),
                 radius: 24,
                 child: const FavoriteButton(),
               )
