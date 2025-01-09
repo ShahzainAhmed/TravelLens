@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           scaffoldBackgroundColor: AppColors.kBackgroundColor,
           bottomSheetTheme: const BottomSheetThemeData(
-            backgroundColor: Colors.transparent,
+            backgroundColor: AppColors.kTransparentColor,
           ),
           appBarTheme: const AppBarTheme(
             backgroundColor: AppColors.kBackgroundColor,
