@@ -1,5 +1,5 @@
 import 'package:animate_do/animate_do.dart';
-import 'package:bounce/bounce.dart' as BounceButton;
+import 'package:bounce/bounce.dart' as bouncebutton;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -82,7 +82,7 @@ class OnboardingScreen extends StatelessWidget {
                             color: AppColors.kWhiteColor.withValues(alpha: 0.9),
                           ),
                         ),
-                        BounceButton.Bounce(
+                        bouncebutton.Bounce(
                           onTap: () => Get.offAllNamed(AppRoutes.homescreen),
                           child: BounceInDown(
                             controller: (controller) => controller = controller,

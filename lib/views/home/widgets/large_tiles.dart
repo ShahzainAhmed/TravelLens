@@ -17,65 +17,72 @@ class LargeTiles extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: Container(
-        padding: const EdgeInsets.all(20),
-        width: 224.w,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(30.r),
-          image: DecorationImage(
-            image: AssetImage(tileModel.image),
-            fit: BoxFit.cover,
+      child: Hero(
+        tag: tileModel.image,
+        child: Container(
+          padding: const EdgeInsets.all(20),
+          width: 224.w,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(30.r),
+            image: DecorationImage(
+              image: AssetImage(tileModel.image),
+              fit: BoxFit.cover,
+            ),
           ),
-        ),
-        child: Stack(
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Container(
-                  height: 50.h,
-                  width: Get.width,
-                  decoration: BoxDecoration(
-                    color: AppColors.kWhiteColor,
-                    borderRadius: BorderRadius.circular(16.r),
-                  ),
-                  child: ListTile(
-                    title: Text(
-                      tileModel.title,
-                      style: AppTypography.kBold14
-                          .copyWith(color: AppColors.kBlackColor),
+          child: Stack(
+            children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Container(
+                    height: 50.h,
+                    width: Get.width,
+                    decoration: BoxDecoration(
+                      color: AppColors.kWhiteColor,
+                      borderRadius: BorderRadius.circular(16.r),
                     ),
-                    subtitle: Text(
-                      tileModel.subtitle,
-                      style: AppTypography.kMedium12.copyWith(
-                        color: AppColors.kDarkGreyColor.withValues(alpha: 0.6),
+                    child: Material(
+                      color: AppColors.kTransparentColor,
+                      child: ListTile(
+                        title: Text(
+                          tileModel.title,
+                          style: AppTypography.kBold14
+                              .copyWith(color: AppColors.kBlackColor),
+                        ),
+                        subtitle: Text(
+                          tileModel.subtitle,
+                          style: AppTypography.kMedium12.copyWith(
+                            color:
+                                AppColors.kDarkGreyColor.withValues(alpha: 0.6),
+                          ),
+                        ),
                       ),
                     ),
+                  )
+                ],
+              ),
+              Positioned(
+                right: 28,
+                bottom: 60,
+                child: Container(
+                  height: 15.h,
+                  padding: EdgeInsets.symmetric(horizontal: 6.w),
+                  decoration: BoxDecoration(
+                    color: AppColors.kWhiteColor,
+                    borderRadius: BorderRadius.circular(8.r),
                   ),
-                )
-              ],
-            ),
-            Positioned(
-              right: 28,
-              bottom: 60,
-              child: Container(
-                height: 15.h,
-                padding: EdgeInsets.symmetric(horizontal: 6.w),
-                decoration: BoxDecoration(
-                  color: AppColors.kWhiteColor,
-                  borderRadius: BorderRadius.circular(8.r),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    const Icon(Icons.star, color: Colors.amber, size: 16),
-                    SizedBox(width: 2.w),
-                    Text(tileModel.rating, style: AppTypography.kMedium10),
-                  ],
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const Icon(Icons.star, color: Colors.amber, size: 16),
+                      SizedBox(width: 2.w),
+                      Text(tileModel.rating, style: AppTypography.kMedium10),
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
