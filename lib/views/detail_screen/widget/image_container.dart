@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -51,28 +52,36 @@ class ImageContainer extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                tileModel.title,
-                style: AppTypography.kLight24.copyWith(
-                  color: AppColors.kWhiteColor,
+              FadeInUp(
+                controller: (controller) => controller = controller,
+                delay: const Duration(milliseconds: 300),
+                child: Text(
+                  tileModel.title,
+                  style: AppTypography.kLight24.copyWith(
+                    color: AppColors.kWhiteColor,
+                  ),
                 ),
               ),
               SizedBox(height: 4.h),
-              Row(
-                children: [
-                  const Icon(
-                    Icons.pin_drop,
-                    color: AppColors.kWhiteColor,
-                    size: 20,
-                  ),
-                  SizedBox(width: 6.w),
-                  Text(
-                    tileModel.subtitle,
-                    style: AppTypography.kMedium14.copyWith(
+              FadeInUp(
+                controller: (controller) => controller = controller,
+                delay: const Duration(milliseconds: 400),
+                child: Row(
+                  children: [
+                    const Icon(
+                      Icons.pin_drop,
                       color: AppColors.kWhiteColor,
+                      size: 20,
                     ),
-                  ),
-                ],
+                    SizedBox(width: 6.w),
+                    Text(
+                      tileModel.subtitle,
+                      style: AppTypography.kMedium14.copyWith(
+                        color: AppColors.kWhiteColor,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
