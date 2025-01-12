@@ -1,4 +1,4 @@
-# Travel Lens - Flutter
+# Travel Lens - Flutter App
 
 ### LinkedIn Post:
 https://www.linkedin.com/feed/update/urn:li:activity:7283377349436297217/
